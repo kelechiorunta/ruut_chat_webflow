@@ -11,6 +11,8 @@
     "build:extension": "mkdir -p dist/webflow-extension && cp -r webflow-extension/* dist/webflow-extension/",
     "bundle": "npm run clean && npm run build:extension && cd dist && zip -r ../bundle.zip . -x \"**/node_modules/*\" \"**/.git/*\" \"*.log\"",
     "deploy:server": "vercel --prod",
+    "build": "echo '⚙️ Building RUUT Webflow OAuth backend...' && mkdir -p webflow-extension/ruut_widget_installation/public && echo 'Build complete'",
+    "vercel-build": "npm run build && npm run start",
     "cy:open": "cypress open"
   },
   "keywords": [],
@@ -41,7 +43,6 @@
     "react-hot-toast": "^2.6.0",
     "react-toastify": "^11.0.5",
     "validator": "^13.15.15",
-    "vercel": "^48.4.0",
     "webflow-api": "^3.1.3"
   },
   "devDependencies": {
