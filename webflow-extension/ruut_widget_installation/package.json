@@ -1,0 +1,52 @@
+{
+  "name": "Ruut Chat",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "concurrently \"webflow extension serve\" \"npm run watch-webpack\"",
+    "build": "npm run build-webpack && webflow extension bundle",
+    "watch-webpack": "webpack --config webpack.config.mjs --mode development --watch",
+    "build-webpack": "webpack --config webpack.config.mjs --mode production",
+    "clean": "rm -rf dist bundle.zip",
+    "prepare-bundle": "npm run clean && npm run build",
+    "lint": "eslint . --ext .ts,.tsx"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.28.3",
+    "@babel/preset-react": "^7.27.1",
+    "@emotion/babel-plugin": "^11.13.5",
+    "babel-loader": "^9.2.1",
+    "concurrently": "^8.2.2",
+    "copy-webpack-plugin": "^13.0.1",
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.90.0",
+    "sass-loader": "^16.0.5",
+    "style-loader": "^4.0.0",
+    "terser": "^5.44.0",
+    "terser-webpack-plugin": "^5.3.14",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^7.3.2",
+    "@mui/material": "^7.3.2",
+    "bootstrap": "^5.3.7",
+    "formik": "^2.4.6",
+    "react-bootstrap": "^2.10.10",
+    "react-confetti": "^6.4.0",
+    "react-dom": "^18.2.0",
+    "react-router": "^7.8.1",
+    "react-router-dom": "^7.8.1",
+    "yup": "^1.7.0"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  }
+}

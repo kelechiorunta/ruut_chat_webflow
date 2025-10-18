@@ -1,0 +1,117 @@
+// 1. Bootstrap functions
+@import '~bootstrap/scss/functions';
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway';
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  /* overflow: hidden; */
+  font-size: 13px;
+}
+
+html,
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;
+  height: 100%;
+  /* overflow: hidden; */
+}
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+}
+iframe {
+  max-width: 100%;
+  border: none;
+}
+
+// 2. Override Bootstrap theme variables
+$theme-colors: (
+  'primary': #7c3aed,
+  // purple accent
+  'dark': #111,
+  'workspace': #1a1a1b,
+  'light': #f9f9f9
+);
+
+$body-bg: #0d0d0d;
+$body-color: #f0f0f0;
+
+// 3. Bootstrap core
+@import '~bootstrap/scss/bootstrap';
+
+// 4. Custom overrides
+.modal-dark {
+  .modal-content {
+    background-color: #111;
+    border-radius: 1rem;
+    color: #fff;
+  }
+
+  .modal-header,
+  .modal-footer {
+    border: none;
+  }
+
+  .btn-primary {
+    background-color: map-get($theme-colors, 'primary');
+    border: none;
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  /* Default (unchecked) */
+  .custom-switch .form-check-input {
+    width: 2.5rem;
+    height: 1.4rem;
+    background-color: #3a3a3a; /* dark gray track */
+    border: none;
+    cursor: pointer;
+    box-shadow: none;
+  }
+
+  /* Knob */
+  .custom-switch .form-check-input::before {
+    background-color: white !important;
+    border-radius: 50%;
+  }
+
+  /* Checked (active purple) */
+  .custom-switch .form-check-input:checked {
+    background-color: #a855f7; /* purple track */
+    border-color: #a855f7;
+  }
+
+  /* Knob while checked */
+  .custom-switch .form-check-input:checked::before {
+    background-color: white !important;
+  }
+
+  #ruut-container {
+    width: 100%;
+    margin: auto;
+  }
+
+  .preview {
+    text-decoration: none;
+    color: white;
+  }
+
+  .customise_workspace {
+    font-family: 'Raleway';
+  }
+}

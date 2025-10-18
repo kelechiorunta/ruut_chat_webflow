@@ -1,0 +1,10 @@
+{
+  "name": "My Webflow App",
+  "apiVersion": "2",
+  "size": "large",
+  "appIntents": {
+    "image": ["manage"],
+    "form": ["manage"]
+  },
+  "appConnections": ["myAppImageConnection", "myAppFormConnection"]
+}

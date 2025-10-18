@@ -1,0 +1,11 @@
+/node_modules
+/webflow-extension/dist
+/webflow-extension/ruut_widget_installation/node_modules
+/webflow-extension/ruut_widget_installation/.env.local
+/webflow-extension/ruut_widget_installation/.env
+.env
+auth.txt
+/.vscode
+/dist/node_modules
+.vercel
+/dist
