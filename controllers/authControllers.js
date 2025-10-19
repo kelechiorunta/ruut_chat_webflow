@@ -206,7 +206,7 @@ export const authenticateRuutToken = async (req, res) => {
     if (!ruut_token || !ruut_accessToken || !accountId) {
       console.log('No token found. Redirecting to Login screen...');
       // Redirect to Login UI
-      return res.redirect('https://ruutchat.vercel.app/#/login');
+      return res.redirect('https://ruutchatty.vercel.app/login');
       //return res.redirect(`http://localhost:1337/#/login`);
     }
 
@@ -239,7 +239,7 @@ export const authenticateRuutToken = async (req, res) => {
 
     console.log('Token verified. Redirecting to frontend...');
     res.redirect(
-      'https://ruutchat.vercel.app' //'http://localhost:1337'
+      'https://ruutchatty.vercel.app' //'http://localhost:1337'
 
       //   : 'https://686539bade32441e008d4a45.webflow-ext.com/oauth-callback'
     );
@@ -282,13 +282,13 @@ export const authorizeWebflow = async (req, res) => {
       req.session.authorizedUser = authorizedUserInfo;
 
       console.log('RUUT Webflow token available, skipping OAuth.');
-      return res.redirect('https://ruutchat.vercel.app'); //('http://localhost:1337/#/oauth-callback'); //'https://686539bade32441e008d4a45.webflow-ext.com');
+      return res.redirect('https://ruutchatty.vercel.app'); //('http://localhost:1337/#/oauth-callback'); //'https://686539bade32441e008d4a45.webflow-ext.com');
     }
 
     // ✅ Otherwise, continue OAuth with the same incoming state
     const authorizeUrl = WebflowClient.authorizeURL({
       clientId: process.env.WEBFLOW_CLIENT_ID,
-      redirectUri: 'https://ruutchat.vercel.app/webflow/oauth/callback',
+      redirectUri: 'https://ruutchatty.vercel.app/webflow/oauth/callback',
       scope: scopes
       // state: incomingState // reuse state instead of regenerating
     });
@@ -315,7 +315,7 @@ export const authorizeWebflowResponse = async (req, res) => {
     const accessToken = await WebflowClient.getAccessToken({
       clientId: process.env.WEBFLOW_CLIENT_ID,
       clientSecret: process.env.WEBFLOW_CLIENT_SECRET,
-      redirectUri: 'https://ruutchat.vercel.app/webflow/oauth/callback', //process.env.WEBFLOW_REDIRECT_URI,
+      redirectUri: 'https://ruutchatty.vercel.app/webflow/oauth/callback', //process.env.WEBFLOW_REDIRECT_URI,
       code: code
     });
 
@@ -366,7 +366,7 @@ export const authorizeWebflowResponse = async (req, res) => {
       console.log('OAuth completed. Redirecting to dashboard...');
     }
 
-    res.redirect('https://ruutchat.vercel.app/#/oauth-callback');
+    res.redirect('https://ruutchatty.vercel.app/#/oauth-callback');
     // res.redirect('http://localhost:1337/#/oauth-callback'); //https://686539bade32441e008d4a45.webflow-ext.com/oauth-callback');
   } catch (error) {
     console.error('OAuth callback error:', error);

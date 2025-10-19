@@ -74,7 +74,7 @@ export const extractCookieToken = async (req, res, next) => {
     console.log('There is token', authAccessToken);
     console.log('There is id', authAccountId);
     if ((!authToken && !authAccessToken && !authAccountId) || !ruutWebflowToken) {
-      return res.redirect('https://ruutchat.vercel.app'); //('http://localhost:1337');
+      return res.redirect('https://ruutchatty.vercel.app'); //('http://localhost:1337');
     }
     req.token = authToken;
     req.accessToken = authAccessToken;

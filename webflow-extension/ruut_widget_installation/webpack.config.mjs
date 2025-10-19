@@ -206,7 +206,7 @@ const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
 // Use your production domain for assets
-const PUBLIC_URL = process.env.PUBLIC_URL || 'https://ruutchat.vercel.app/';
+const PUBLIC_URL = process.env.PUBLIC_URL || 'https://ruutchatty.vercel.app';
 
 export default {
   entry: './src/index.jsx',
