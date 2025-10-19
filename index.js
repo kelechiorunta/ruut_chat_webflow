@@ -24,6 +24,7 @@ const app = express();
 const DEV_PORT = process.env.DEV_PORT;
 const PORT = process.env.PORT || DEV_PORT;
 const ALLOWED_DOMAINS = [
+  'https://ruutchatwebflow.vercel.app',
   'https://ruutchat.vercel.app',
   'http://localhost:1337',
   'https://686539bade32441e008d4a45.webflow-ext.com',

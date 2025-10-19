@@ -12,7 +12,7 @@
     "bundle": "npm run clean && npm run build:extension && cd dist && zip -r ../bundle.zip . -x \"**/node_modules/*\" \"**/.git/*\" \"*.log\"",
     "deploy:server": "vercel --prod",
     "build": "echo '⚙️ Building RUUT Webflow OAuth backend...' && mkdir -p webflow-extension/ruut_widget_installation/public && echo 'Build complete'",
-    "vercel-build": "npm run build && npm run start",
+    "vercel-build": "npm install && npm run build && npm run start",
     "cy:open": "cypress open"
   },
   "keywords": [],
